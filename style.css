@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #1e1e2f;
+  color: white;
+  margin: 0;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.buttons button {
+  font-size: 18px;
+  margin: 10px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #4caf50;
+  color: white;
+  transition: 0.2s;
+}
+
+.buttons button:hover {
+  background: #45a049;
+  transform: scale(1.05);
+}
+
+.result {
+  margin-top: 20px;
+}
+
+.score {
+  margin-top: 20px;
+  font-size: 18px;
+}
