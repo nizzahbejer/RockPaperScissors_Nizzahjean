@@ -13,6 +13,12 @@ const winsText = document.getElementById("wins");
 const lossesText = document.getElementById("losses");
 const tiesText = document.getElementById("ties");
 
+const resetBtn = document.getElementById("reset");
+const flash = document.getElementById("flash");
+
+
+
+
 // Choices array
 const choices = ["rock", "paper", "scissors"];
 
@@ -20,11 +26,10 @@ const choices = ["rock", "paper", "scissors"];
 buttons.forEach(button => {
   button.addEventListener("click", () => {
     const playerChoice = button.dataset.choice;
-    const computerChoice = getComputerChoice();
+    const computer = choices[Math.floor(Math.random() * 3)];
+    const result = getResult(player, computer);
 
-    const result = getResult(playerChoice, computerChoice);
-
-    updateUI(playerChoice, computerChoice, result);
+    updateUI(player, computer, result);
   });
 });
 
