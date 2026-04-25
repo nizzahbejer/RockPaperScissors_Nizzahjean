@@ -3,18 +3,19 @@
 }
 
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
-  text-align: center;
   background: #064e3b;
   color: white;
-  margin: 0;
-
+ 
+  
+  height: 100vh;
   overflow: hidden;
   
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  
   
 }
 
