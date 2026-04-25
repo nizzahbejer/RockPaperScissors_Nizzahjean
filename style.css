@@ -18,12 +18,24 @@ body {
   
 }
 
+/* ===== MAIN GAME PANEL ===== */
+
 .container {
-  background:#2a2a40;
+  
+  width: min(900px, 92vw);
+  height: min(90vh, 700px); /* 👈 keeps it perfectly fitted */
+
+  background: linear-gradient(145deg, #065f46, #022c22);
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+
   padding: 30px 40px;
-  border-radius: 15px
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-  width: 350px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  text-align: center;
 }
 
 h1 {
