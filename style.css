@@ -36,10 +36,19 @@ body {
   justify-content: space-between;
 
   text-align: center;
-}
+
+
+  /*==== TITILE ====*/
+  
 
 h1 {
-  margin-bottom: 20px;
+  font-size: clamp(28px, 3vw, 44px;
+   margin: 0;
+}
+  
+/* ===== EMOJI BATTLE ===== */
+#emoji-display {
+  font-size: clamp(50px, 6vw, 80px);
 }
 
 .buttons button {
