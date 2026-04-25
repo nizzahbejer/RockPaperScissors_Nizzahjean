@@ -25,24 +25,21 @@ const choices = ["rock", "paper", "scissors"];
 // Add click event to each button
 buttons.forEach(button => {
   button.addEventListener("click", () => {
-    const playerChoice = button.dataset.choice;
-    const computer = choices[Math.floor(Math.random() * 3)];
     const player = button.dataset.choice;
+    const computer = choices[Math.floor(Math.random() * 3)];
+    const result = getResult(player, computer);
+
+    updateUI(player, computer, result);
+    
     
   });
 });
-
-// Random computer choice
-function getComputerChoice() {
-  const randomIndex = Math.floor(Math.random() * 3);
-  return choices[randomIndex];
-}
 
 // Determine winner
 function getResult(player, computer) {
   if (player === computer) {
     ties++;
-    return "It's a tie!";
+    return "tie";
   }
 
   if (
@@ -51,10 +48,10 @@ function getResult(player, computer) {
     (player === "scissors" && computer === "paper")
   ) {
     wins++;
-    return "You win! 🎉";
+    return "win";
   } else {
     losses++;
-    return "You lose! 😢";
+    return "lose";
   }
 }
 
@@ -68,6 +65,8 @@ function getEmoji(choice) {
 function updateUI(player, computer, result) {
   playerChoiceText.textContent = `You chose: ${player}`;
   computerChoiceText.textContent = `Computer chose: ${computer}`;
+  emojiDisplay.textContent = '${getEmoji(player)} vs ${getEmoji(computer)}';
+  
   
   resultText.className = "";
 
@@ -91,7 +90,7 @@ function updateUI(player, computer, result) {
 
 /* CONFETTI */
 function launchConfetti() {
-  const duration = 1000; // 5 seconds
+  const duration = 1000; // 1 seconds
   const end = Date.now() + duration;
 
   const interval = setInterval(() => {
