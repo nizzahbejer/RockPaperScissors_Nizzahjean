@@ -27,9 +27,8 @@ buttons.forEach(button => {
   button.addEventListener("click", () => {
     const playerChoice = button.dataset.choice;
     const computer = choices[Math.floor(Math.random() * 3)];
-    const result = getResult(player, computer);
-
-    updateUI(player, computer, result);
+    const player = button.dataset.choice;
+    
   });
 });
 
