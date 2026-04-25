@@ -1,13 +1,29 @@
+*{
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background: #1e1e2f;
+  background: #064e3b;
   color: white;
   margin: 0;
+
+  overflow: hidden;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
 }
 
 .container {
-  padding: 20px;
+  background:#2a2a40;
+  padding: 30px 40px;
+  border-radius: 15px
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  width: 350px;
 }
 
 h1 {
