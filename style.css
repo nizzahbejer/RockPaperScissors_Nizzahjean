@@ -2,154 +2,168 @@
   box-sizing: border-box;
 }
 
-body {
+body{
   margin: 0;
   font-family: Arial, sans-serif;
   background: #064e3b;
   color: white;
- 
-  
-  height: 100vh;
-  overflow: hidden;
-  
+
+  min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  
+
+  overflow: hidden;
 }
 
-/* ===== MAIN GAME PANEL ===== */
-
-.container {
-  
+/* MAIN CONTAINER */
+.container{
   width: min(900px, 92vw);
-  height: min(90vh, 700px); /* 👈 keeps it perfectly fitted */
+  min-height: 650px;
 
   background: linear-gradient(145deg, #065f46, #022c22);
-  border-radius: 25px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
 
-  padding: 30px 40px;
+  border-radius: 25px;
+
+  padding: 35px;
+
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
+  gap: 25px;
+
   text-align: center;
-
-
-  /*==== TITILE ====*/
-  
-
-h1 {
-  font-size: clamp(28px, 3vw, 44px);
-   margin: 0;
-}
-  
-/* ===== EMOJI BATTLE ===== */
-#emoji-display {
-  font-size: clamp(50px, 6vw, 80px);
 }
 
-  
-  /* ===== BUTTONS ===== */
-.buttons {
-  display: flex;
-  gap: 15px;
-}
- 
-
-.buttons button {
-  flex: 1;
-  font-size: clamp(16px, 2vw, 20px);
-  padding: 14px;
-  border: none;
-  border-radius: 14px;
-  cursor: pointer;
-  background: #10b981;
-  color: white;
-  transition: 0.2s;
+/* TITLE */
+h1{
+  margin: 0;
+  font-size: clamp(28px, 4vw, 48px);
 }
 
-.buttons button:hover {
- background: #34d399;
-  transform: translateY(-3px) scale(1.05);
-}
-
-
-  /* ===== RESULT AREA ===== */
-  
-.result {
+/* EMOJI DISPLAY */
+#emoji-display{
+  font-size: clamp(60px, 8vw, 100px);
   margin-top: 10px;
 }
 
-#player-choice,
-#computer-choice {
-  font-size: 18px;
-  margin: 5px 0;
+/* BUTTON AREA */
+.buttons{
+  display: flex;
+  gap: 15px;
 }
 
-#result-text {
-  font-size: clamp(24px, 3vw, 36px);
-  font-weight: 800;
-  margin: 10px 0;
-}
+.buttons button{
+  flex: 1;
 
-/* ===== SCORE ===== */
+  padding: 16px;
 
-.score {
- display: flex;
-  justify-content: space-round;
-  font-size: 18px;
-
-}
-
-/* ===== RESET BUTTON ===== */
-#reset {
-  width: 100%;
-  padding: 14px;
   border: none;
-  border-radius: 12px;
-  background: #059669;
+  border-radius: 15px;
+
+  background: #10b981;
   color: white;
-  font-size: 18px;
+
+  font-size: clamp(16px, 2vw, 22px);
   font-weight: bold;
+
   cursor: pointer;
+
   transition: 0.2s;
 }
 
-#reset:hover {
-  background: #10b981;
+.buttons button:hover{
+  background: #34d399;
+  transform: translateY(-3px) scale(1.03);
 }
 
-/* ===== WIN/LOSE COLORS ===== */
-.win {
+/* RESULT AREA */
+.result{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#player-choice,
+#computer-choice{
+  margin: 0;
+  font-size: 18px;
+}
+
+#result-text{
+  margin-top: 10px;
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 900;
+}
+
+/* SCORE */
+.score{
+  display: flex;
+  justify-content: space-around;
+
+  background: rgba(255,255,255,0.08);
+
+  padding: 15px;
+  border-radius: 15px;
+
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* RESET BUTTON */
+#reset{
+  padding: 16px;
+
+  border: none;
+  border-radius: 15px;
+
+  background: #059669;
+  color: white;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+#reset:hover{
+  background: #10b981;
+  transform: scale(1.02);
+}
+
+/* RESULT COLORS */
+.win{
   color: #34d399;
 }
 
-.lose {
+.lose{
   color: #f87171;
 }
 
-.tie {
+.tie{
   color: #d1d5db;
 }
 
-  /* ===== RED FLASH ===== */
-  #flash {
-    position: fixed;
-    inset:0;
-    background: red;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
-  }
+/* RED FLASH */
+#flash{
+  position: fixed;
+  inset: 0;
 
-  #flash.show {
-    opacity:0.35;
-  }
+  background: red;
 
-  
+  opacity: 0;
 
+  pointer-events: none;
+
+  transition: opacity 0.3s;
+}
+
+#flash.show{
+  opacity: 0.35;
 }
